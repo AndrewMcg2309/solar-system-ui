@@ -5,6 +5,7 @@ float m, v, e, ma;
 
 float ang;
 float x, y;
+
 Planet [] planet = new Planet [9]; 
 
 int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
@@ -82,7 +83,7 @@ void draw()
   pushMatrix();
     
     //Mercury 
-    translate(width / 9, height / 6);
+    translate(width / 9, height / 7);
     rotateY(speedA);
     noFill();
     stroke(128, 128, 128);
@@ -90,7 +91,7 @@ void draw()
     sphere(m);
     
     //Venus
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(255, 153, 51);
@@ -98,7 +99,7 @@ void draw()
     sphere(v);
     
     //Earth
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(102, 255, 102);
@@ -106,7 +107,7 @@ void draw()
     sphere(e);
     
     //Mars
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(153, 102, 0);
@@ -121,7 +122,7 @@ void draw()
   pushMatrix();
     
     //Saturn
-    translate(width - (width / 9), height / 6);
+    translate(width - (width / 9), height / 7);
     rotateY(speedA);
     noFill();
     stroke(128, 128, 128);
@@ -129,7 +130,7 @@ void draw()
     sphere(m);
     
     //Jupiter
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(255, 153, 51);
@@ -137,7 +138,7 @@ void draw()
     sphere(v);
     
     //Uranus
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(102, 255, 102);
@@ -145,7 +146,7 @@ void draw()
     sphere(e);
     
     //Neptune
-    translate(0, 165);
+    translate(0, 175);
     rotateY(speedA);
     noFill();
     stroke(153, 102, 0);
