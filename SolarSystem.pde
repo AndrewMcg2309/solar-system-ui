@@ -59,6 +59,7 @@ void draw()
   //----------------------------Sun---------------------------------------
   
   float speedA = 20 * radians(t += (TWO_PI / 360));
+  float speedB = (20 * radians(t += (TWO_PI / 360)) / 2);
   
   pushMatrix();
   translate(width / 2, height / 2);
@@ -77,6 +78,8 @@ void draw()
        noFill();
        stroke(255, 255, 255); 
        strokeWeight(2);
+       rotateX(speedB);
+       rotateY(speedB);
        ellipse(0, 0, planet[i].distFromSun*2, planet[i].distFromSun*2);
      } 
      
