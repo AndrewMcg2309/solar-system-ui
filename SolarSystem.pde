@@ -29,10 +29,10 @@ void setup()
   s = 80;
   t = 0;
   
-  m = 40;
-  v = 40;
-  e = 40;
-  ma = 40;
+  m = 70;
+  v = 70;
+  e = 70;
+  ma = 70;
 }
 
 
@@ -68,16 +68,16 @@ void draw()
   float speedA = 20 * radians(t += (TWO_PI / 360));
 //--------------------------------------------------Draw Grid-------------------------------------------------//
 
-    stroke(255, 255, 255);
+    /*stroke(255, 255, 255);
     strokeWeight(0.5);
     for (int i = 0; i < width; i+=grid) {
       line (i, 0, i, height);
     }
     for (int i = 0; i < height; i+=grid) {
       line (0, i, width, i);
-    }
+    }*/
     
-//--------------------------------------------Planets---TO SELECT-------------------------------------------------------//
+//--------------------------------------------Planets---TO SELECT---LEFT----------------------------------------------------//
   
   pushMatrix();
     
@@ -85,31 +85,70 @@ void draw()
     translate(width / 9, height / 6);
     rotateY(speedA);
     noFill();
-    stroke(255, 255, 0);
+    stroke(128, 128, 128);
     strokeWeight(0.3);
     sphere(m);
     
     //Venus
-    translate(0, 140);
+    translate(0, 165);
     rotateY(speedA);
     noFill();
-    stroke(255, 255, 0);
+    stroke(255, 153, 51);
     strokeWeight(0.3);
     sphere(v);
     
     //Earth
-    translate(0, 140);
+    translate(0, 165);
     rotateY(speedA);
     noFill();
-    stroke(255, 255, 0);
+    stroke(102, 255, 102);
     strokeWeight(0.3);
     sphere(e);
     
     //Mars
-    translate(0, 140);
+    translate(0, 165);
     rotateY(speedA);
     noFill();
-    stroke(255, 255, 0);
+    stroke(153, 102, 0);
+    strokeWeight(0.3);
+    sphere(ma);
+    
+    
+  popMatrix();
+  
+//--------------------------------------------Planets---TO SELECT---RIGHT----------------------------------------------------//
+  
+  pushMatrix();
+    
+    //Saturn
+    translate(width - (width / 9), height / 6);
+    rotateY(speedA);
+    noFill();
+    stroke(128, 128, 128);
+    strokeWeight(0.3);
+    sphere(m);
+    
+    //Jupiter
+    translate(0, 165);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 153, 51);
+    strokeWeight(0.3);
+    sphere(v);
+    
+    //Uranus
+    translate(0, 165);
+    rotateY(speedA);
+    noFill();
+    stroke(102, 255, 102);
+    strokeWeight(0.3);
+    sphere(e);
+    
+    //Neptune
+    translate(0, 165);
+    rotateY(speedA);
+    noFill();
+    stroke(153, 102, 0);
     strokeWeight(0.3);
     sphere(ma);
     
