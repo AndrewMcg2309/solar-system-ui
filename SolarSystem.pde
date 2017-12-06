@@ -2,6 +2,7 @@
 float t, s;
 
 float m, v, e, ma;
+float j, sa, u, n;
 
 float moon = 10;
 
@@ -32,10 +33,17 @@ void setup()
   s = 80;
   t = 0;
   
-  m = 70;
+  // Mercury Venus Earth Mars
+  m = 35;
   v = 70;
-  e = 70;
-  ma = 70;
+  e = 80;
+  ma = 45;
+  
+  // Jupiter Saturn Uranus Neptune
+  j = 90;
+  sa = 70;
+  u = 45;
+  n = 35;
 }
 
 
@@ -110,8 +118,8 @@ void draw()
         //moon
         translate(70, -50);
         rotateY(speedA);
-        fill(255,255,255);
-        stroke(102, 255, 102);
+        noFill();
+        stroke(128, 128, 128);
         strokeWeight(0.3);
         sphere(moon);
         
@@ -141,7 +149,7 @@ void draw()
     noFill();
     stroke(153, 102, 0);
     strokeWeight(0.3);
-    sphere(v);
+    sphere(j);
     
    //Saturn
     translate(0, 175);
@@ -150,10 +158,13 @@ void draw()
     noFill();
     stroke(255, 204, 102);
     strokeWeight(0.3);
-    sphere(m);
-    strokeWeight(1);
-    rotateX(HALF_PI-.45);
-    ellipse(0,0,240,240);
+    sphere(sa);
+      strokeWeight(1);
+      rotateX(HALF_PI-.45);
+      ellipse(0,0,240,240);
+      ellipse(0,0,220,220);
+      ellipse(0,0,200,200);
+      ellipse(0,0,180,180);
   popMatrix();
   
   pushMatrix();
@@ -164,7 +175,7 @@ void draw()
     noFill();
     stroke(0, 153, 255);
     strokeWeight(0.3);
-    sphere(e);
+    sphere(u);
     
    //Neptune
     translate(0, 175);
@@ -172,7 +183,7 @@ void draw()
     noFill();
     stroke(153, 51, 153);
     strokeWeight(0.3);
-    sphere(ma);
+    sphere(n);
     
     
   popMatrix();
