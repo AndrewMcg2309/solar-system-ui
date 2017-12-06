@@ -78,8 +78,8 @@ void draw()
        noFill();
        stroke(255, 255, 255); 
        strokeWeight(2);
-       rotateX(speedB);
-       rotateY(speedB);
+       rotateX(speedB / 4);
+       rotateY(speedB / 4);
        ellipse(0, 0, planet[i].distFromSun*2, planet[i].distFromSun*2);
      } 
      
