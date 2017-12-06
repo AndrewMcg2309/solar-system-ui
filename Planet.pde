@@ -31,7 +31,7 @@ class Planet
     distFromSun = radius + 60; 
     ang = PI; 
     speed = random( -.02 , .02 );
-    w = 20; 
+    w = 10; 
     move();
   }
   
