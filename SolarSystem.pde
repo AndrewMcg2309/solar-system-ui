@@ -59,15 +59,15 @@ void draw()
   //----------------------------Sun---------------------------------------
   
   float speedA = 20 * radians(t += (TWO_PI / 360));
-  float speedB = (20 * radians(t += (TWO_PI / 360)) / 2);
+  //float speedB = (20 * radians(t += (TWO_PI / 360)) / 2);
   
   pushMatrix();
-  translate(width / 2, height / 2);
-  rotateY(speedA);
-  noFill();
-  stroke(255, 255, 0);
-  strokeWeight(0.3);
-  sphere(s);
+    translate(width / 2, height / 2);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 255, 0);
+    strokeWeight(0.3);
+    sphere(s);
   popMatrix();
   
  //-------------------------------Planets-----------------------------------
@@ -76,17 +76,17 @@ void draw()
   
      for (int i=0; i<9; i++){
        noFill();
-       stroke(255, 255, 255); 
+       stroke(255, 0, 0); 
        strokeWeight(2);
-       rotateX(speedB / 4);
-       rotateY(speedB / 4);
-       ellipse(0, 0, planet[i].distFromSun*2, planet[i].distFromSun*2);
+
+       ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
      } 
      
     for (int i=0; i<9; i++)
     {
+      planet[i].render();
        planet[i].move(); 
-       planet[i].render(); 
+       
     }
 
   

@@ -1,3 +1,4 @@
+
 class Planet
 {
   String planet;
@@ -35,7 +36,7 @@ class Planet
     move();
   }
   
-  void move()
+   void move()
   {
     x = cos(ang) * distFromSun; 
     y = sin(ang) * distFromSun; 
