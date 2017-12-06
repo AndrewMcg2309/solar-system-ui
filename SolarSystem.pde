@@ -1,42 +1,50 @@
 // Planets
 float t, s;
+
+float m, v, e, ma;
+
 float ang;
-float x,y;
+float x, y;
 Planet [] planet = new Planet [9]; 
 
-float border = 50;
+int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
+
 
 void setup()
 {
   size(1500, 800, P3D);
   background(0);
- 
-  
+
+
   for (int i=0; i<9; i++)
   {
     float distFromSun =(i*20) + 60; 
-    planet[i] = new Planet (distFromSun); 
+    planet[i] = new Planet (distFromSun);
   }
-  
+
   loadData();
   listData();
-  
+
   // Sizes Of Sun
   s = 80;
   t = 0;
+  
+  m = 40;
+  v = 40;
+  e = 40;
+  ma = 40;
 }
 
 
 ArrayList<Planet> planets = new ArrayList<Planet>();
 
-     
 
 //--------------------------------------------------Loading Data----------------------------------------------//
 
 void loadData()
 {
   Table table = loadTable("planets.csv", "header");
-  for(TableRow row:table.rows())
+  for (TableRow row : table.rows())
   {
     Planet planet = new Planet(row);    
     planets.add(planet);
@@ -47,7 +55,7 @@ void loadData()
 
 void listData()
 {
-  for(Planet planet:planets)
+  for (Planet planet : planets)
   {
     println(planet);
   }
@@ -55,16 +63,62 @@ void listData()
 
 void draw()
 {
-  
-  // Sun
+ 
   background(0);
-  
-  
-  //----------------------------Sun---------------------------------------
-  
   float speedA = 20 * radians(t += (TWO_PI / 360));
-  //float speedB = (20 * radians(t += (TWO_PI / 360)) / 2);
+//--------------------------------------------------Draw Grid-------------------------------------------------//
+
+    stroke(255, 255, 255);
+    strokeWeight(0.5);
+    for (int i = 0; i < width; i+=grid) {
+      line (i, 0, i, height);
+    }
+    for (int i = 0; i < height; i+=grid) {
+      line (0, i, width, i);
+    }
+    
+//--------------------------------------------Planets---TO SELECT-------------------------------------------------------//
   
+  pushMatrix();
+    
+    //Mercury 
+    translate(width / 9, height / 6);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 255, 0);
+    strokeWeight(0.3);
+    sphere(m);
+    
+    //Venus
+    translate(0, 140);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 255, 0);
+    strokeWeight(0.3);
+    sphere(v);
+    
+    //Earth
+    translate(0, 140);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 255, 0);
+    strokeWeight(0.3);
+    sphere(e);
+    
+    //Mars
+    translate(0, 140);
+    rotateY(speedA);
+    noFill();
+    stroke(255, 255, 0);
+    strokeWeight(0.3);
+    sphere(ma);
+    
+    
+  popMatrix();
+  
+
+  //------------------------------------------Sun-----------------------------------------------------------------//
+
   pushMatrix();
     translate(width / 2, height / 2);
     rotateY(speedA);
@@ -73,52 +127,24 @@ void draw()
     strokeWeight(0.3);
     sphere(s);
   popMatrix();
-  
- //-------------------------------Planets-----------------------------------
- 
-  translate(width/2, height/2);  
-  
-     
-       noFill();
-       stroke(0, 255, 0); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[0].distFromSun * 2), (planet[0].distFromSun * 2));
-       
-       noFill();
-       stroke(255, 0, 0); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[1].distFromSun * 2), (planet[1].distFromSun * 2));
-       
-       noFill();
-       stroke(0, 0, 255); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[2].distFromSun * 2), (planet[2].distFromSun * 2));
-       
-       noFill();
-       stroke(255, 255, 0); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[3].distFromSun * 2), (planet[3].distFromSun * 2));
-       
-       noFill();
-       stroke(255, 0, 255); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[4].distFromSun * 2), (planet[4].distFromSun * 2));
-       
-       noFill();
-       stroke(0, 255, 255); 
-       strokeWeight(1);
-       ellipse(0, 0, (planet[5].distFromSun * 2), (planet[5].distFromSun * 2));
-       
-    
-     
-     
-    for (int i=0; i<9; i++)
-    {
-      planet[i].render();
-      
-       planet[i].move(); 
-       
-    }
 
+  //--------------------------------------------Planets---Rotating-------------------------------------------------------//
+
+  translate(width/2, height/2);  
+
+  pushMatrix();
+  for (int i=0; i<9; i++) {
+    noFill();
+    stroke(255, 0, 0); 
+    strokeWeight(2);
+    ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
+  } 
+
+  for (int i=0; i<9; i++)
+  {
+    planet[i].render();
+    planet[i].move();
+  }
+  popMatrix();
   
 }
