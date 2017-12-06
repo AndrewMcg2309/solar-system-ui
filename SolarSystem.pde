@@ -161,10 +161,11 @@ void draw()
     sphere(sa);
       strokeWeight(1);
       rotateX(HALF_PI-.45);
-      ellipse(0,0,240,240);
-      ellipse(0,0,220,220);
-      ellipse(0,0,200,200);
-      ellipse(0,0,180,180);
+      ellipse(0, 0, 240, 240);
+      ellipse(0, 0, 220, 220);
+      ellipse(0, 0, 200, 200);
+      ellipse(0, 0, 180, 180);
+      
   popMatrix();
   
   pushMatrix();
@@ -176,9 +177,16 @@ void draw()
     stroke(0, 153, 255);
     strokeWeight(0.3);
     sphere(u);
-    
+      strokeWeight(1);
+      rotateX(HALF_PI+.45);
+      ellipse(0, 0, 150, 150);
+      
+  popMatrix();
+  
+  pushMatrix();
+  
    //Neptune
-    translate(0, 175);
+    translate(width - (width / 9), height / 7 + (350 + 175));
     rotateY(speedA);
     noFill();
     stroke(153, 51, 153);
