@@ -3,6 +3,8 @@ float t, s;
 
 float m, v, e, ma;
 
+float moon = 10;
+
 float ang;
 float x, y;
 
@@ -64,7 +66,6 @@ void listData()
 
 void draw()
 {
- 
   background(0);
   float speedA = 20 * radians(t += (TWO_PI / 360));
 //--------------------------------------------------Draw Grid-------------------------------------------------//
@@ -86,7 +87,7 @@ void draw()
     translate(width / 9, height / 7);
     rotateY(speedA);
     noFill();
-    stroke(128, 128, 128);
+    stroke(255, 153, 51);
     strokeWeight(0.3);
     sphere(m);
     
@@ -94,7 +95,7 @@ void draw()
     translate(0, 175);
     rotateY(speedA);
     noFill();
-    stroke(255, 153, 51);
+    stroke(128, 128, 128);
     strokeWeight(0.3);
     sphere(v);
     
@@ -105,12 +106,25 @@ void draw()
     stroke(102, 255, 102);
     strokeWeight(0.3);
     sphere(e);
+        
+        //moon
+        translate(70, -50);
+        rotateY(speedA);
+        fill(255,255,255);
+        stroke(102, 255, 102);
+        strokeWeight(0.3);
+        sphere(moon);
+        
+        
+    popMatrix();
+    
+    pushMatrix();
     
     //Mars
-    translate(0, 175);
+    translate(width / 9, height / 7 + 525);
     rotateY(speedA);
     noFill();
-    stroke(153, 102, 0);
+    stroke(255, 51, 0);
     strokeWeight(0.3);
     sphere(ma);
     
@@ -120,36 +134,43 @@ void draw()
 //--------------------------------------------Planets---TO SELECT---RIGHT----------------------------------------------------//
   
   pushMatrix();
-    
-    //Saturn
+  
+  //Jupiter
     translate(width - (width / 9), height / 7);
     rotateY(speedA);
     noFill();
-    stroke(128, 128, 128);
-    strokeWeight(0.3);
-    sphere(m);
-    
-    //Jupiter
-    translate(0, 175);
-    rotateY(speedA);
-    noFill();
-    stroke(255, 153, 51);
+    stroke(153, 102, 0);
     strokeWeight(0.3);
     sphere(v);
     
-    //Uranus
+   //Saturn
     translate(0, 175);
     rotateY(speedA);
+    lights();
     noFill();
-    stroke(102, 255, 102);
+    stroke(255, 204, 102);
+    strokeWeight(0.3);
+    sphere(m);
+    strokeWeight(1);
+    rotateX(HALF_PI-.45);
+    ellipse(0,0,240,240);
+  popMatrix();
+  
+  pushMatrix();
+
+   //Uranus
+    translate(width - (width / 9), height / 7 + 350);
+    rotateY(speedA);
+    noFill();
+    stroke(0, 153, 255);
     strokeWeight(0.3);
     sphere(e);
     
-    //Neptune
+   //Neptune
     translate(0, 175);
     rotateY(speedA);
     noFill();
-    stroke(153, 102, 0);
+    stroke(153, 51, 153);
     strokeWeight(0.3);
     sphere(ma);
     
