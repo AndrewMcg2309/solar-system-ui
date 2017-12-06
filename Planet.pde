@@ -31,8 +31,8 @@ class Planet
   Planet (float radius){
     distFromSun = radius + 60; 
     ang = PI; 
-    speed = random( -.02 , .02 );
-    w = 10; 
+    speed = (random(.01, .02));
+    w = 15; 
     move();
   }
   
@@ -46,7 +46,7 @@ class Planet
     void render()
     { 
       fill(255, 255, 255);      
-      ellipse(x,y,w,w); 
+      ellipse(x,y,w,w);
     }
   
   

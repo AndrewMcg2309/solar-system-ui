@@ -4,10 +4,13 @@ float ang;
 float x,y;
 Planet [] planet = new Planet [9]; 
 
+float border = 50;
+
 void setup()
 {
   size(1500, 800, P3D);
   background(0);
+ 
   
   for (int i=0; i<9; i++)
   {
@@ -52,6 +55,7 @@ void listData()
 
 void draw()
 {
+  
   // Sun
   background(0);
   
@@ -74,17 +78,44 @@ void draw()
  
   translate(width/2, height/2);  
   
-     for (int i=0; i<9; i++){
+     
+       noFill();
+       stroke(0, 255, 0); 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[0].distFromSun * 2), (planet[0].distFromSun * 2));
+       
        noFill();
        stroke(255, 0, 0); 
-       strokeWeight(2);
-
-       ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
-     } 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[1].distFromSun * 2), (planet[1].distFromSun * 2));
+       
+       noFill();
+       stroke(0, 0, 255); 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[2].distFromSun * 2), (planet[2].distFromSun * 2));
+       
+       noFill();
+       stroke(255, 255, 0); 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[3].distFromSun * 2), (planet[3].distFromSun * 2));
+       
+       noFill();
+       stroke(255, 0, 255); 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[4].distFromSun * 2), (planet[4].distFromSun * 2));
+       
+       noFill();
+       stroke(0, 255, 255); 
+       strokeWeight(1);
+       ellipse(0, 0, (planet[5].distFromSun * 2), (planet[5].distFromSun * 2));
+       
+    
+     
      
     for (int i=0; i<9; i++)
     {
       planet[i].render();
+      
        planet[i].move(); 
        
     }
