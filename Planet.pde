@@ -22,17 +22,31 @@ class Planet
     fullRot = row.getFloat("FullRot");
     temp = row.getFloat("Temperature");
     moons = row.getInt("Moons");
-    
-    /*pos = new PVector(
-      row.getFloat("Xg")
-      ,row.getFloat("Yg") 
-      ,row.getFloat("Zg")
-      );
-   screenPos = new PVector(
-    map(pos.x, -5, 5, border, width - border)
-    , map(pos.y, -5, 5, border, height - border)
-    );*/
   }
+  
+  float x,y,w;
+  float ang; 
+  
+  Planet (float radius){
+    distFromSun = radius; 
+    ang = PI; 
+    speed = random( -.02 , .02 );
+    w = 20; 
+    move();
+  }
+  
+  void move()
+  {
+    x = cos(ang) * distFromSun; 
+    y = sin(ang) * distFromSun; 
+    ang += speed; 
+   }
+    
+    void render()
+    { 
+      fill(255, 255, 255);      
+      ellipse(x,y,w,w); 
+    }
   
   
   //Converts to a  stiring

@@ -1,23 +1,35 @@
-float r, t;
+// Planets
+float t, s;
+float ang;
+float x,y;
+Planet [] planet = new Planet [9]; 
 
 void setup()
 {
   size(1500, 800, P3D);
   background(0);
   
-  r = 20;       // sphere's radius
-  t = 0;         // rotation accumulator
- 
+  for (int i=0; i<9; i++)
+  {
+    float distFromSun =(i*20) + 60; 
+    planet[i] = new Planet (distFromSun); 
+  }
+  
   loadData();
   listData();
   
-  drawPlanets();
+  // Sizes Of Sun
+  s = 80;
+  t = 0;
 }
 
 
 ArrayList<Planet> planets = new ArrayList<Planet>();
 
+     
+
 //--------------------------------------------------Loading Data----------------------------------------------//
+
 void loadData()
 {
   Table table = loadTable("planets.csv", "header");
@@ -43,29 +55,33 @@ void draw()
   // Sun
   background(0);
   
-  float speed = 10 * radians(t += (TWO_PI / 360));
   
+  //----------------------------Sun---------------------------------------
+  
+  float speedA = 10 * radians(t += (TWO_PI / 360));
+  
+  pushMatrix();
   translate(width / 2, height / 2);
-  rotateY(speed);
+  rotateY(speedA);
   noFill();
   stroke(255, 255, 0);
   strokeWeight(0.1);
-  sphere(r);
+  sphere(s);
+  popMatrix();
+  
+ //-------------------------------Planets-----------------------------------
+ 
+  translate(width/2, height/2);  
+  
+     for (int i=0; i<9; i++){
+       noFill();
+       stroke(255); 
+       ellipse(0,0,planet[i].distFromSun*2, planet[i].distFromSun*2);
+     } 
+    for (int i=0; i<9; i++){
+    planet[i].move(); 
+        planet[i].render(); 
 }
 
-void drawPlanets()
-{
-  background(0);
-  float speed = 10 * radians(t += (TWO_PI / 360));
   
-  pushMatrix();
-  
-  translate(120, 100);
-  rotateY(speed);
-  noFill();
-  stroke(0,255,0);
-  strokeWeight(0.5);
-  sphere(r);
-  
-  popMatrix();
 }
