@@ -75,8 +75,9 @@ void draw()
   
      for (int i=0; i<9; i++){
        noFill();
-       stroke(255); 
-       ellipse(0,0,planet[i].distFromSun*2, planet[i].distFromSun*2);
+       stroke(random(255), random(255), random(255)); 
+       strokeWeight(2);
+       ellipse(0, 0, planet[i].distFromSun*2, planet[i].distFromSun*2);
      } 
     for (int i=0; i<9; i++){
     planet[i].move(); 

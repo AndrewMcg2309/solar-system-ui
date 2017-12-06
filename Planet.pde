@@ -28,7 +28,7 @@ class Planet
   float ang; 
   
   Planet (float radius){
-    distFromSun = radius; 
+    distFromSun = radius + 60; 
     ang = PI; 
     speed = random( -.02 , .02 );
     w = 20; 
