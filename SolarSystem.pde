@@ -12,7 +12,7 @@ float x, y;
 Planet [] planet = new Planet [9]; 
 
 int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
-
+int click = 0;
 
 void setup()
 {
@@ -74,6 +74,7 @@ void listData()
 
 void draw()
 {
+  
   background(0);
   float speedA = 20 * radians(t += (TWO_PI / 360));
 //--------------------------------------------------Draw Grid-------------------------------------------------//
@@ -227,29 +228,33 @@ void draw()
   }
   popMatrix();
   
+  
+  
+  if(mouseX >= 125 && mouseX <= 204 && mouseY >= 85 && mouseY <= 165)
+  {
+    
+    m = 80;
+    String merText = "Size = " + planet[0].radius;
+    fill(255, 255, 255);
+    text(merText, 0, 0, 100, 100);  
+  }else
+  {
+    m = 35;
+    
+  }
+  
 }
 
 //-----------------------------------------------When clicked--------------------------------//
 
-void mousePressed()
+void mouseClicked()
 {
-  if(m != 0)
+  if( click != 50)
   {
-    m = 90;
+    fill(255,255, 255);
+    text(("x = " + mouseX), 400, 20);
+    text(("y = " + mouseY), 400, 100);
   }
-  else
-  {
-    m = 0;
-  }
-}
-  void mouseReleased()
-{
-  if(m != 0)
-  {
-    m = 30;
-  }
-  else
-  {
-    m = 0;
-  }
+  
+ 
 }
