@@ -116,7 +116,7 @@ void draw()
     sphere(e);
         
         //moon
-        translate(70, -50);
+        translate(100, -50);
         rotateY(speedA);
         noFill();
         stroke(128, 128, 128);
@@ -227,4 +227,29 @@ void draw()
   }
   popMatrix();
   
+}
+
+//-----------------------------------------------When clicked--------------------------------//
+
+void mousePressed()
+{
+  if(m != 0)
+  {
+    m = 90;
+  }
+  else
+  {
+    m = 0;
+  }
+}
+  void mouseReleased()
+{
+  if(m != 0)
+  {
+    m = 30;
+  }
+  else
+  {
+    m = 0;
+  }
 }
