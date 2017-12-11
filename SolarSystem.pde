@@ -234,7 +234,7 @@ void draw()
   {
     
     m = 80;
-    String merText = "Size = " + planet[0].radius;
+    String merText = "Size = " + planet[1].radius;
     fill(255, 255, 255);
     text(merText, 0, 0, 100, 100);  
   }else
