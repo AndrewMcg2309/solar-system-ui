@@ -216,7 +216,7 @@ void draw()
   
   
   
-  //For Mouse Position - Floating Over Planets
+  //For Mouse Position - Floating Over Planets - Left Planets
   
   //Mercury
     if(mouseX >= 125 && mouseX <= 204 && mouseY >= 85 && mouseY <= 165)
@@ -269,9 +269,85 @@ void draw()
     {
       ma = 45;  
     }
+    
+    
+    
+    
+  
+  //For Mouse Position - Floating Over Planets - Right Planets
+  
+  //Jupiter
+    if(mouseX >= 1225 && mouseX <= 1462 && mouseY >= 59 && mouseY <= 251)
+    {
+      j = 100;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      j = 90;  
+    }
+    
+  //Saturn
+    if(mouseX >= 1246 && mouseX <= 1432 && mouseY >= 274 && mouseY <= 420)
+    {
+      sa = 90;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      sa = 70;  
+    }
+    
+  //Uranus
+    if(mouseX >= 1277 && mouseX <= 1395 && mouseY >= 469 && mouseY <= 561)
+    {
+      u = 70;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      u = 45;  
+    }
+    
+  //Neptune
+    if(mouseX >= 1289 && mouseX <= 1380 && mouseY >= 625 && mouseY <= 702)
+    {
+      n = 65;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      n = 35;  
+    }
+    
+    
+  //Sun
+    if(mouseX >= 667 && mouseX <= 830 && mouseY >= 322 && mouseY <= 477)
+    {
+      sun.sunSize = 270;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      sun.sunSize = 80;  
+    }
+    
+    
 }
 
-//-----------------------------------------------When clicked--------------------------------//
+
+
+
 
 void mouseClicked()
 {
