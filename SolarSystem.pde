@@ -33,7 +33,7 @@ void setup()
     m = 35; v = 70; e = 80; ma = 45;
   
   // Jupiter Saturn Uranus Neptune
-    j = 90; sa = 70; u = 45; n = 35; p = 15;
+    j = 90; sa = 70; u = 45; n = 35; p = 20;
   
     t = 0;
 }
@@ -187,7 +187,7 @@ void draw()
       rotateY(rotateX);
       noFill();
       stroke(153, 102, 0);
-      strokeWeight(0.6);
+      strokeWeight(0.4);
       sphere(p);
         
     popMatrix();
@@ -363,6 +363,22 @@ void draw()
     else
     {
       n = 35;  
+    }
+    
+   //Pluto
+    if(mouseX >= 735 && mouseX <= 764 && mouseY >= 737 && mouseY <= 770)
+    {
+      p = 30;
+      String pluText = "PLUTO     NOT A PLANET :)";
+      fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
+      textAlign(CENTER, TOP);
+      text(pluText, -350, -400, 700, 100);   
+    }
+    else
+    {
+      p = 20;  
     }
     
     
