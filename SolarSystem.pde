@@ -33,7 +33,7 @@ void setup()
     m = 35; v = 70; e = 80; ma = 45;
   
   // Jupiter Saturn Uranus Neptune
-    j = 90; sa = 70; u = 45; n = 35;
+    j = 90; sa = 70; u = 45; n = 35; p = 15;
   
     t = 0;
 }
@@ -179,7 +179,19 @@ void draw()
       sphere(n);
         
     popMatrix();
-  
+    
+    pushMatrix();
+    
+    //Pluto
+      translate(width / 2, 755);
+      rotateY(rotateX);
+      noFill();
+      stroke(153, 102, 0);
+      strokeWeight(0.6);
+      sphere(p);
+        
+    popMatrix();
+
 
   //Sun
     pushMatrix();
@@ -190,6 +202,8 @@ void draw()
       strokeWeight(0.6);
       sphere(sun.sunSize);
     popMatrix();
+    
+    
 
   
   //Initial Position of Rings
@@ -223,9 +237,10 @@ void draw()
     if(mouseX >= 125 && mouseX <= 204 && mouseY >= 85 && mouseY <= 165)
     {
       m = 80;
-      String merText = "RADIUS = 2440.0,    SPEED = 47.87,      FROM SUN = 57.9,      LIFE? = false,      ROTATION = 0.238,     TEMPERATURE =452.0,     MOONS = 0";
+      String merText = "MERCURY     RADIUS = 2440.0,    SPEED = 47.87,      FROM SUN = 57.9,      LIFE? = false,      ROTATION = 0.238,     TEMPERATURE =452.0,     MOONS = 0";
       fill(255, 255, 255);
-      textSize(11);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(merText, -350, -400, 700, 100);  
     }
@@ -238,8 +253,10 @@ void draw()
     if(mouseX >= 67 && mouseX <= 253 && mouseY >= 217 && mouseY <= 360)
     {
       v = 90;
-      String venText = "RADIUS = 6052.0,    SPEED = 35.02,    FROM SUN = 108.2,     LIFE? = false,     ROTATION = 0.615,     TEMPERATURE =726.0,    MOONS = 0";
+      String venText = "VENUS       RADIUS = 6052.0,    SPEED = 35.02,    FROM SUN = 108.2,     LIFE? = false,     ROTATION = 0.615,     TEMPERATURE =726.0,    MOONS = 0";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(venText, -350, -400, 700, 100);  
     }
@@ -252,8 +269,10 @@ void draw()
     if(mouseX >= 51 && mouseX <= 268 && mouseY >= 382 && mouseY <= 546)
     {
       e = 95;
-      String earText = "RADIUS = 6371.0,     SPEED = 29.78,      FROM SUN = 149.6,      LIFE? = true,     ROTATION = 1.0,     TEMPERATURE =270.0,     MOONS = 1";
+      String earText = "EARTH       RADIUS = 6371.0,     SPEED = 29.78,      FROM SUN = 149.6,      LIFE? = true,     ROTATION = 1.0,     TEMPERATURE =270.0,     MOONS = 1";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(earText, -350, -400, 700, 100);   
     }
@@ -266,8 +285,10 @@ void draw()
     if(mouseX >= 103 && mouseX <= 227 && mouseY >= 594 && mouseY <= 687)
     {
       ma = 80;
-      String marText = "RADIUS = 3390.0,      SPEED = 24.07,        FROM SUN = 227.9,      LIFE? = false,      ROTATION = 1.88,      TEMPERATURE =200.0,      MOONS = 2";
+      String marText = "MARS       RADIUS = 3390.0,      SPEED = 24.07,        FROM SUN = 227.9,      LIFE? = false,      ROTATION = 1.88,      TEMPERATURE =200.0,      MOONS = 2";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(marText, -350, -400, 700, 100);   
     }
@@ -284,8 +305,10 @@ void draw()
     if(mouseX >= 1225 && mouseX <= 1462 && mouseY >= 59 && mouseY <= 251)
     {
       j = 100;
-      String jupText = "RADIUS = 69911.0,      SPEED = 13.07,      FROM SUN = 778.3,     LIFE? = false,      ROTATION = 11.862,      TEMPERATURE =120.0,      MOONS = 67";
+      String jupText = "JUPITER      RADIUS = 69911.0,      SPEED = 13.07,      FROM SUN = 778.3,     LIFE? = false,      ROTATION = 11.862,      TEMPERATURE =120.0,      MOONS = 67";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(jupText, -350, -400, 700, 100);   
     }
@@ -298,8 +321,10 @@ void draw()
     if(mouseX >= 1246 && mouseX <= 1432 && mouseY >= 274 && mouseY <= 420)
     {
       sa = 90;
-      String satText = "RADIUS = 58382.0,     SPEED = 9.69,       FROM SUN = 1427.0,      LIFE? = false,      ROTATION = 29.456,       TEMPERATURE =88.0,      MOONS = 62";
+      String satText = "SATURN       RADIUS = 58382.0,     SPEED = 9.69,       FROM SUN = 1427.0,      LIFE? = false,      ROTATION = 29.456,       TEMPERATURE =88.0,      MOONS = 62";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(satText, -350, -400, 700, 100);  
     }
@@ -312,8 +337,10 @@ void draw()
     if(mouseX >= 1277 && mouseX <= 1395 && mouseY >= 469 && mouseY <= 561)
     {
       u = 70;
-      String uraText = "RADIUS = 25362.0,     SPEED = 6.81,      FROM SUN = 2871.0,      LIFE? = false,      ROTATION = 84.07,      TEMPERATURE =59.0,     MOONS = 27";
+      String uraText = "URANUS       RADIUS = 25362.0,     SPEED = 6.81,      FROM SUN = 2871.0,      LIFE? = false,      ROTATION = 84.07,      TEMPERATURE =59.0,     MOONS = 27";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(uraText, -350, -400, 700, 100);   
     }
@@ -326,8 +353,10 @@ void draw()
     if(mouseX >= 1289 && mouseX <= 1380 && mouseY >= 625 && mouseY <= 702)
     {
       n = 65;
-      String nepText = "RADIUS = 24622.0,      SPEED = 5.43,      FROM SUN = 4497.1,      LIFE? = false,     ROTATION = 164.81,      TEMPERATURE =48.0,      MOONS = 13";
+      String nepText = "NEPTUNE        RADIUS = 24622.0,      SPEED = 5.43,      FROM SUN = 4497.1,      LIFE? = false,     ROTATION = 164.81,      TEMPERATURE =48.0,      MOONS = 13";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(nepText, -350, -400, 700, 100);   
     }
@@ -342,8 +371,10 @@ void draw()
     {
       
       sun.sunSize = 270;
-      String sunText = "Size = " + planet[0].radius;
+      String sunText = "It's Very Big";
       fill(255, 255, 255);
+      stroke(255, 255, 255);
+      textSize(18);
       textAlign(CENTER, TOP);
       text(sunText, -350, -400, 700, 100);   
     }
@@ -404,5 +435,28 @@ void drawGrid()
     
     line(width - 250, 740, width - 250, 770);
     ellipse(width - 250, 770, 15, 15);
+    
+  
+  //For Top Middle  
+    ellipse(375, 30, 15, 15);
+    line(375, 30, 405, 90);
+    ellipse(405, 90, 15, 15);
+   
+    line(405, 90, width - 405, 90);
+   
+    ellipse(width - 375, 30, 15, 15);
+    line(width - 375, 30, width - 405, 90);
+    ellipse(width - 405, 90, 15, 15);
+    
+  //For Bottom Middle  
+    ellipse(375, height - 30, 15, 15);
+    line(375, height - 30, 405, height - 90);
+    ellipse(405, height - 90, 15, 15);
+   
+    line(405, height - 90, width - 405, height - 90);
+   
+    ellipse(width - 375, height - 30, 15, 15);
+    line(width - 375, height - 30, width - 405, height - 90);
+    ellipse(width - 405, height - 90, 15, 15);
   
 }
