@@ -1,15 +1,15 @@
 // Planets
-float t, ang, x, y;;
+  float t, ang, x, y;
 
 //PLanets - Moon
-float m, v, e, ma, j, sa, u, n, p;
-float moon = 10;
+  float m, v, e, ma, j, sa, u, n, p;
+  float moon = 10;
 
-Planet [] planet = new Planet [9];
-ArrayList<Planet> planets = new ArrayList<Planet>();
-Sun sun = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
+//Data From Classes
+  Planet [] planet = new Planet [9];
+  ArrayList<Planet> planets = new ArrayList<Planet>();
+  Sun sun = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
 
-//int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
 int click = 0;
 
 void setup()
@@ -18,181 +18,172 @@ void setup()
   loadData();
   listData();
   
+  // For Planets - Distance From Sun + Each Other
+    for (int i=0; i<9; i++) {
+      float distFromSun = ( i * 20 ) + 60; 
+      planet[i] = new Planet (distFromSun);
+    }
 
-  for (int i=0; i<9; i++) {
-    float distFromSun = ( i * 20 ) + 60; 
-    planet[i] = new Planet (distFromSun);
-  }
-
-  
   // Mercury Venus Earth Mars
-  m = 35; v = 70; e = 80; ma = 45;
+    m = 35; v = 70; e = 80; ma = 45;
   
   // Jupiter Saturn Uranus Neptune
-  j = 90; sa = 70; u = 45; n = 35;
+    j = 90; sa = 70; u = 45; n = 35;
   
-  t = 0;
+    t = 0;
 }
 
-//--------------------------------------------------Loading Data----------------------------------------------//
 
-void loadData()
-{
-  Table table = loadTable("planets.csv", "header");
-  for (TableRow row : table.rows())
+
+// Load Data
+  void loadData()
   {
-    Planet planet = new Planet(row);    
-    planets.add(planet);
+    Table table = loadTable("planets.csv", "header");
+    for (TableRow row : table.rows())
+    {
+      Planet planet = new Planet(row);    
+      planets.add(planet);
+    }
   }
-}
 
-//--------------------------------------------------Listing Data----------------------------------------------//
 
-void listData()
-{
-  for (Planet planet : planets)
+
+//List Data
+  void listData()
   {
-    println(planet);
+    for (Planet planet : planets)
+    {
+      println(planet);
+    }
   }
-}
 
 void draw()
 {
   background(0);
-  float speedA = 20 * radians(t += (TWO_PI / 360));
-//--------------------------------------------------Draw Grid-------------------------------------------------//
-
-    /*stroke(255, 255, 255);
-    strokeWeight(0.5);
-    for (int i = 0; i < width; i+=grid) {
-      line (i, 0, i, height);
-    }
-    for (int i = 0; i < height; i+=grid) {
-      line (0, i, width, i);
-    }*/
-    
-//--------------------------------------------Planets---TO SELECT---LEFT----------------------------------------------------//
   
-  pushMatrix();
+  //Rotation Speed
+    float rotateX = 20 * radians(t += (TWO_PI / 360));
+
     
-    //Mercury 
-    translate(width / 9, height / 7);
-    rotateY(speedA);
-    noFill();
-    stroke(255, 153, 51);
-    strokeWeight(0.3);
-    sphere(m);
+  //Big Planets - Left
+    pushMatrix();
     
-    //Venus
-    translate(0, 175);
-    rotateY(speedA);
-    noFill();
-    stroke(128, 128, 128);
-    strokeWeight(0.3);
-    sphere(v);
-    
-    //Earth
-    translate(0, 175);
-    rotateY(speedA);
-    noFill();
-    stroke(102, 255, 102);
-    strokeWeight(0.3);
-    sphere(e);
-        
-        //moon
-        translate(100, -50);
-        rotateY(speedA);
+      //Mercury 
+        translate(width / 9, height / 7);
+        rotateY(rotateX);
+        noFill();
+        stroke(255, 153, 51);
+        strokeWeight(0.3);
+        sphere(m);
+      
+      //Venus
+        translate(0, 175);
+        rotateY(rotateX);
         noFill();
         stroke(128, 128, 128);
         strokeWeight(0.3);
-        sphere(moon);
+        sphere(v);
+      
+      //Earth
+        translate(0, 175);
+        rotateY(rotateX);
+        noFill();
+        stroke(102, 255, 102);
+        strokeWeight(0.3);
+        sphere(e);
+          
+          //moon
+            translate(100, -50);
+            rotateY(rotateX);
+            noFill();
+            stroke(128, 128, 128);
+            strokeWeight(0.3);
+            sphere(moon);
+          
+      popMatrix();
+      
+      pushMatrix();
+      
+      //Mars
+        translate(width / 9, height / 7 + 525);
+        rotateY(rotateX);
+        noFill();
+        stroke(255, 51, 0);
+        strokeWeight(0.3);
+        sphere(ma);
+    
+      popMatrix();
+  
+  //Big Planets - Right
+  
+      pushMatrix();
+  
+    //Jupiter
+      translate(width - (width / 9), height / 7);
+      rotateY(rotateX);
+      noFill();
+      stroke(153, 102, 0);
+      strokeWeight(0.3);
+      sphere(j);
+      
+     //Saturn
+      translate(0, 175);
+      rotateY(rotateX);
+      lights();
+      noFill();
+      stroke(255, 204, 102);
+      strokeWeight(0.3);
+      sphere(sa);
+      
+        //Saturn Rings
+          strokeWeight(1);
+          rotateX(HALF_PI-.45);
+          ellipse(0, 0, 240, 240);
+          ellipse(0, 0, 220, 220);
+          ellipse(0, 0, 200, 200);
+          ellipse(0, 0, 180, 180);
         
+    popMatrix();
+    
+    pushMatrix();
+  
+     //Uranus
+      translate(width - (width / 9), height / 7 + 350);
+      rotateY(rotateX);
+      noFill();
+      stroke(0, 153, 255);
+      strokeWeight(0.3);
+      sphere(u);
+        
+        //Uranus Ring
+          strokeWeight(1);
+          rotateX(HALF_PI+.45);
+          ellipse(0, 0, 150, 150);
         
     popMatrix();
     
     pushMatrix();
     
-    //Mars
-    translate(width / 9, height / 7 + 525);
-    rotateY(speedA);
-    noFill();
-    stroke(255, 51, 0);
-    strokeWeight(0.3);
-    sphere(ma);
-    
-    
-  popMatrix();
-  
-//--------------------------------------------Planets---TO SELECT---RIGHT----------------------------------------------------//
-  
-  pushMatrix();
-  
-  //Jupiter
-    translate(width - (width / 9), height / 7);
-    rotateY(speedA);
-    noFill();
-    stroke(153, 102, 0);
-    strokeWeight(0.3);
-    sphere(j);
-    
-   //Saturn
-    translate(0, 175);
-    rotateY(speedA);
-    lights();
-    noFill();
-    stroke(255, 204, 102);
-    strokeWeight(0.3);
-    sphere(sa);
-      strokeWeight(1);
-      rotateX(HALF_PI-.45);
-      ellipse(0, 0, 240, 240);
-      ellipse(0, 0, 220, 220);
-      ellipse(0, 0, 200, 200);
-      ellipse(0, 0, 180, 180);
-      
-  popMatrix();
-  
-  pushMatrix();
-
-   //Uranus
-    translate(width - (width / 9), height / 7 + 350);
-    rotateY(speedA);
-    noFill();
-    stroke(0, 153, 255);
-    strokeWeight(0.3);
-    sphere(u);
-      strokeWeight(1);
-      rotateX(HALF_PI+.45);
-      ellipse(0, 0, 150, 150);
-      
-  popMatrix();
-  
-  pushMatrix();
-  
-   //Neptune
-    translate(width - (width / 9), height / 7 + (350 + 175));
-    rotateY(speedA);
-    noFill();
-    stroke(153, 51, 153);
-    strokeWeight(0.3);
-    sphere(n);
-    
-    
-  popMatrix();
+     //Neptune
+      translate(width - (width / 9), height / 7 + (350 + 175));
+      rotateY(rotateX);
+      noFill();
+      stroke(153, 51, 153);
+      strokeWeight(0.3);
+      sphere(n);
+        
+    popMatrix();
   
 
-  //------------------------------------------Sun-----------------------------------------------------------------//
-
-  pushMatrix();
-  
-    translate(width / 2, height / 2);
-    rotateY(speedA);
-    noFill();
-    stroke(255, 255, 0);
-    strokeWeight(0.3);
-    sphere(sun.sunSize);
-    
-  popMatrix();
+  //Sun
+    pushMatrix();
+      translate(width / 2, height / 2);
+      rotateY(rotateX);
+      noFill();
+      stroke(255, 255, 0);
+      strokeWeight(0.3);
+      sphere(sun.sunSize);
+    popMatrix();
 
   //---------------------------------------Planets---Rotating-------------------------------------------------------//
 
