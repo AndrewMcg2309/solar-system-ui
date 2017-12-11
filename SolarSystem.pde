@@ -252,10 +252,10 @@ void draw()
     if(mouseX >= 51 && mouseX <= 268 && mouseY >= 382 && mouseY <= 546)
     {
       e = 95;
-      String merText = "RADIUS = 6371.0,     SPEED = 29.78,      FROM SUN = 149.6,      LIFE? = true,     ROTATION = 1.0,     TEMPERATURE =270.0,     MOONS = 1";
+      String earText = "RADIUS = 6371.0,     SPEED = 29.78,      FROM SUN = 149.6,      LIFE? = true,     ROTATION = 1.0,     TEMPERATURE =270.0,     MOONS = 1";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(earText, -350, -400, 700, 100);   
     }
     else
     {
@@ -266,10 +266,10 @@ void draw()
     if(mouseX >= 103 && mouseX <= 227 && mouseY >= 594 && mouseY <= 687)
     {
       ma = 80;
-      String merText = "Size = " + planet[0].radius;
+      String marText = "RADIUS = 3390.0,      SPEED = 24.07,        FROM SUN = 227.9,      LIFE? = false,      ROTATION = 1.88,      TEMPERATURE =200.0,      MOONS = 2";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(marText, -350, -400, 700, 100);   
     }
     else
     {
@@ -284,10 +284,10 @@ void draw()
     if(mouseX >= 1225 && mouseX <= 1462 && mouseY >= 59 && mouseY <= 251)
     {
       j = 100;
-      String merText = "Size = " + planet[0].radius;
+      String jupText = "RADIUS = 69911.0,      SPEED = 13.07,      FROM SUN = 778.3,     LIFE? = false,      ROTATION = 11.862,      TEMPERATURE =120.0,      MOONS = 67";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(jupText, -350, -400, 700, 100);   
     }
     else
     {
@@ -298,10 +298,10 @@ void draw()
     if(mouseX >= 1246 && mouseX <= 1432 && mouseY >= 274 && mouseY <= 420)
     {
       sa = 90;
-      String merText = "Size = " + planet[0].radius;
+      String satText = "RADIUS = 58382.0,     SPEED = 9.69,       FROM SUN = 1427.0,      LIFE? = false,      ROTATION = 29.456,       TEMPERATURE =88.0,      MOONS = 62";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);  
+      text(satText, -350, -400, 700, 100);  
     }
     else
     {
@@ -312,10 +312,10 @@ void draw()
     if(mouseX >= 1277 && mouseX <= 1395 && mouseY >= 469 && mouseY <= 561)
     {
       u = 70;
-      String merText = "Size = " + planet[0].radius;
+      String uraText = "RADIUS = 25362.0,     SPEED = 6.81,      FROM SUN = 2871.0,      LIFE? = false,      ROTATION = 84.07,      TEMPERATURE =59.0,     MOONS = 27";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(uraText, -350, -400, 700, 100);   
     }
     else
     {
@@ -326,10 +326,10 @@ void draw()
     if(mouseX >= 1289 && mouseX <= 1380 && mouseY >= 625 && mouseY <= 702)
     {
       n = 65;
-      String merText = "Size = " + planet[0].radius;
+      String nepText = "RADIUS = 24622.0,      SPEED = 5.43,      FROM SUN = 4497.1,      LIFE? = false,     ROTATION = 164.81,      TEMPERATURE =48.0,      MOONS = 13";
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(nepText, -350, -400, 700, 100);   
     }
     else
     {
@@ -342,10 +342,10 @@ void draw()
     {
       
       sun.sunSize = 270;
-      String merText = "Size = " + planet[0].radius;
+      String sunText = "Size = " + planet[0].radius;
       fill(255, 255, 255);
       textAlign(CENTER, TOP);
-      text(merText, -350, -400, 700, 100);   
+      text(sunText, -350, -400, 700, 100);   
     }
     else
     {
