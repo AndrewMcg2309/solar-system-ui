@@ -65,6 +65,7 @@ void setup()
 void draw()
 {
   background(bk);
+  drawGrid();
   
   //Rotation Speed
     float rotateX = 20 * radians(t += (TWO_PI / 360));
@@ -272,8 +273,6 @@ void draw()
     
     
     
-    
-  
   //For Mouse Position - Floating Over Planets - Right Planets
   
   //Jupiter
@@ -332,6 +331,7 @@ void draw()
   //Sun
     if(mouseX >= 667 && mouseX <= 830 && mouseY >= 322 && mouseY <= 477)
     {
+      
       sun.sunSize = 270;
       String merText = "Size = " + planet[0].radius;
       fill(255, 255, 255);
@@ -359,4 +359,40 @@ void mouseClicked()
   }
   
  
+}
+
+
+void drawGrid()
+{
+  //For Left
+    noFill();
+    stroke(153, 51, 153);
+    strokeWeight(2);
+    ellipse(230, 30, 15, 15);
+    
+    line(230, 30, 230, 60);
+    line(230, 60, 290, 100);
+    ellipse(290, 100, 15, 15);
+    
+    ellipse(290, 700, 15, 15);
+    line(290, 100, 290, 700);
+    line(290, 700, 230, 740);
+    
+    line(230, 740, 230, 770);
+    ellipse(230, 770, 15, 15);
+    
+  //For Right
+     ellipse(width - 230, 30, 15, 15);
+    
+    line(width - 230, 30, width - 230, 60);
+    line(width - 230, 60, width - 300, 100);
+    ellipse(width - 290, 100, 15, 15);
+    
+    ellipse(width -290, 700, 15, 15);
+    line(width - 290, 100, width - 300, 700);
+    line(width - 290, 700, width - 230, 740);
+    
+    line(width - 230, 740, width - 230, 770);
+    ellipse(width - 230, 770, 15, 15);
+  
 }
