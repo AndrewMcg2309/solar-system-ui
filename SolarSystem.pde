@@ -9,7 +9,10 @@ float moon = 10;
 float ang;
 float x, y;
 
-Planet [] planet = new Planet [9]; 
+Planet [] planet = new Planet [9];
+
+Sun sun = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
+
 
 int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
 int click = 0;
@@ -74,7 +77,6 @@ void listData()
 
 void draw()
 {
-  
   background(0);
   float speedA = 20 * radians(t += (TWO_PI / 360));
 //--------------------------------------------------Draw Grid-------------------------------------------------//
@@ -206,7 +208,7 @@ void draw()
     noFill();
     stroke(255, 255, 0);
     strokeWeight(0.3);
-    sphere(s);
+    sphere(sun.sunSize);
   popMatrix();
 
   //--------------------------------------------Planets---Rotating-------------------------------------------------------//
@@ -234,7 +236,7 @@ void draw()
   {
     
     m = 80;
-    String merText = "Size = " + planet[1].radius;
+    String merText = "Size = " + planet[0].radius;
     fill(255, 255, 255);
     text(merText, 0, 0, 100, 100);  
   }else
