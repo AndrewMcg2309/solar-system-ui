@@ -200,7 +200,7 @@ void draw()
       for (int i = 0 ; i < 9 ; i++) 
       {
         noFill();
-        stroke(255, 0, 0); 
+        stroke(0, 153, 255); 
         strokeWeight(2);
         //Draw Planet
           ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
@@ -368,31 +368,31 @@ void drawGrid()
     noFill();
     stroke(153, 51, 153);
     strokeWeight(2);
-    ellipse(230, 30, 15, 15);
+    ellipse(250, 30, 15, 15);
     
-    line(230, 30, 230, 60);
-    line(230, 60, 290, 100);
-    ellipse(290, 100, 15, 15);
+    line(250, 30, 250, 60);
+    line(250, 60, 310, 100);
+    ellipse(310, 100, 15, 15);
     
-    ellipse(290, 700, 15, 15);
-    line(290, 100, 290, 700);
-    line(290, 700, 230, 740);
+    ellipse(310, 700, 15, 15);
+    line(310, 100, 310, 700);
+    line(310, 700, 250, 740);
     
-    line(230, 740, 230, 770);
-    ellipse(230, 770, 15, 15);
+    line(250, 740, 250, 770);
+    ellipse(250, 770, 15, 15);
     
   //For Right
-     ellipse(width - 230, 30, 15, 15);
+     ellipse(width - 250, 30, 15, 15);
     
-    line(width - 230, 30, width - 230, 60);
-    line(width - 230, 60, width - 300, 100);
-    ellipse(width - 290, 100, 15, 15);
+    line(width - 250, 30, width - 250, 60);
+    line(width - 250, 60, width - 310, 100);
+    ellipse(width - 310, 100, 15, 15);
     
-    ellipse(width -290, 700, 15, 15);
-    line(width - 290, 100, width - 300, 700);
-    line(width - 290, 700, width - 230, 740);
+    ellipse(width -310, 700, 15, 15);
+    line(width - 310, 100, width - 310, 700);
+    line(width - 310, 700, width - 250, 740);
     
-    line(width - 230, 740, width - 230, 770);
-    ellipse(width - 230, 770, 15, 15);
+    line(width - 250, 740, width - 250, 770);
+    ellipse(width - 250, 770, 15, 15);
   
 }
