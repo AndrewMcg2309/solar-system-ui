@@ -1,57 +1,38 @@
 // Planets
-float t, s;
+float t, ang, x, y;;
 
-float m, v, e, ma;
-float j, sa, u, n;
-
+//PLanets - Moon
+float m, v, e, ma, j, sa, u, n, p;
 float moon = 10;
 
-float ang;
-float x, y;
-
 Planet [] planet = new Planet [9];
-
+ArrayList<Planet> planets = new ArrayList<Planet>();
 Sun sun = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
 
-
-int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
+//int grid = 50; // change this number to 20 or 50, etc., if you want fewer grid lines
 int click = 0;
 
 void setup()
 {
   size(1500, 800, P3D);
-  background(0);
+  loadData();
+  listData();
+  
 
-
-  for (int i=0; i<9; i++)
-  {
-    float distFromSun =(i*20) + 60; 
+  for (int i=0; i<9; i++) {
+    float distFromSun = ( i * 20 ) + 60; 
     planet[i] = new Planet (distFromSun);
   }
 
-  loadData();
-  listData();
-
-  // Sizes Of Sun
-  s = 80;
-  t = 0;
   
   // Mercury Venus Earth Mars
-  m = 35;
-  v = 70;
-  e = 80;
-  ma = 45;
+  m = 35; v = 70; e = 80; ma = 45;
   
   // Jupiter Saturn Uranus Neptune
-  j = 90;
-  sa = 70;
-  u = 45;
-  n = 35;
+  j = 90; sa = 70; u = 45; n = 35;
+  
+  t = 0;
 }
-
-
-ArrayList<Planet> planets = new ArrayList<Planet>();
-
 
 //--------------------------------------------------Loading Data----------------------------------------------//
 
@@ -203,15 +184,17 @@ void draw()
   //------------------------------------------Sun-----------------------------------------------------------------//
 
   pushMatrix();
+  
     translate(width / 2, height / 2);
     rotateY(speedA);
     noFill();
     stroke(255, 255, 0);
     strokeWeight(0.3);
     sphere(sun.sunSize);
+    
   popMatrix();
 
-  //--------------------------------------------Planets---Rotating-------------------------------------------------------//
+  //---------------------------------------Planets---Rotating-------------------------------------------------------//
 
   translate(width/2, height/2);  
 
