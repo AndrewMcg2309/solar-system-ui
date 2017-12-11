@@ -1,3 +1,6 @@
+//Image
+PImage bk;
+
 // Planets
   float t, ang, x, y;
 
@@ -15,6 +18,7 @@ int click = 0;
 void setup()
 {
   size(1500, 800, P3D);
+  bk = loadImage("space.jpg");
   loadData();
   listData();
   
@@ -60,7 +64,7 @@ void setup()
 
 void draw()
 {
-  background(0);
+  background(bk);
   
   //Rotation Speed
     float rotateX = 20 * radians(t += (TWO_PI / 360));
@@ -74,7 +78,7 @@ void draw()
         rotateY(rotateX);
         noFill();
         stroke(255, 153, 51);
-        strokeWeight(0.3);
+        strokeWeight(0.6);
         sphere(m);
       
       //Venus
@@ -82,7 +86,7 @@ void draw()
         rotateY(rotateX);
         noFill();
         stroke(128, 128, 128);
-        strokeWeight(0.3);
+        strokeWeight(0.6);
         sphere(v);
       
       //Earth
@@ -90,7 +94,7 @@ void draw()
         rotateY(rotateX);
         noFill();
         stroke(102, 255, 102);
-        strokeWeight(0.3);
+        strokeWeight(0.6);
         sphere(e);
           
           //moon
@@ -98,7 +102,7 @@ void draw()
             rotateY(rotateX);
             noFill();
             stroke(128, 128, 128);
-            strokeWeight(0.3);
+            strokeWeight(0.4);
             sphere(moon);
           
       popMatrix();
@@ -110,7 +114,7 @@ void draw()
         rotateY(rotateX);
         noFill();
         stroke(255, 51, 0);
-        strokeWeight(0.3);
+        strokeWeight(0.6);
         sphere(ma);
     
       popMatrix();
@@ -120,20 +124,20 @@ void draw()
       pushMatrix();
   
     //Jupiter
-      translate(width - (width / 9), height / 7);
+      translate(width - (width / 9), height / 5);
       rotateY(rotateX);
       noFill();
       stroke(153, 102, 0);
-      strokeWeight(0.3);
+      strokeWeight(0.6);
       sphere(j);
       
      //Saturn
-      translate(0, 175);
+      translate(0, 190);
       rotateY(rotateX);
       lights();
       noFill();
       stroke(255, 204, 102);
-      strokeWeight(0.3);
+      strokeWeight(0.6);
       sphere(sa);
       
         //Saturn Rings
@@ -149,11 +153,11 @@ void draw()
     pushMatrix();
   
      //Uranus
-      translate(width - (width / 9), height / 7 + 350);
+      translate(width - (width / 9), height / 7 + 400);
       rotateY(rotateX);
       noFill();
       stroke(0, 153, 255);
-      strokeWeight(0.3);
+      strokeWeight(0.6);
       sphere(u);
         
         //Uranus Ring
@@ -166,11 +170,11 @@ void draw()
     pushMatrix();
     
      //Neptune
-      translate(width - (width / 9), height / 7 + (350 + 175));
+      translate(width - (width / 9), height / 7 + (350 + 200));
       rotateY(rotateX);
       noFill();
       stroke(153, 51, 153);
-      strokeWeight(0.3);
+      strokeWeight(0.6);
       sphere(n);
         
     popMatrix();
@@ -182,7 +186,7 @@ void draw()
       rotateY(rotateX);
       noFill();
       stroke(255, 255, 0);
-      strokeWeight(0.3);
+      strokeWeight(0.6);
       sphere(sun.sunSize);
     popMatrix();
 
@@ -196,7 +200,7 @@ void draw()
       {
         noFill();
         stroke(255, 0, 0); 
-        strokeWeight(1);
+        strokeWeight(2);
         //Draw Planet
           ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
       } 
