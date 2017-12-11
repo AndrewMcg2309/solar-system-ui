@@ -226,6 +226,45 @@ void draw()
     {
       m = 35;  
     }
+    
+  //Venus
+    if(mouseX >= 67 && mouseX <= 253 && mouseY >= 217 && mouseY <= 360)
+    {
+      v = 90;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      v = 70;  
+    }
+    
+  //Earth
+    if(mouseX >= 51 && mouseX <= 268 && mouseY >= 382 && mouseY <= 546)
+    {
+      e = 95;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      e = 80;  
+    }
+    
+  //Mars
+    if(mouseX >= 103 && mouseX <= 227 && mouseY >= 594 && mouseY <= 687)
+    {
+      ma = 80;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      ma = 45;  
+    }
 }
 
 //-----------------------------------------------When clicked--------------------------------//
