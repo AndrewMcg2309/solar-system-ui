@@ -19,7 +19,8 @@ void setup()
   listData();
   
   // For Planets - Distance From Sun + Each Other
-    for (int i=0; i<9; i++) {
+    for (int i = 0 ; i < 9 ; i++) 
+    {
       float distFromSun = ( i * 20 ) + 60; 
       planet[i] = new Planet (distFromSun);
     }
@@ -185,40 +186,46 @@ void draw()
       sphere(sun.sunSize);
     popMatrix();
 
-  //---------------------------------------Planets---Rotating-------------------------------------------------------//
-
-  translate(width/2, height/2);  
-
-  pushMatrix();
-  for (int i=0; i<9; i++) {
-    noFill();
-    stroke(255, 0, 0); 
-    strokeWeight(2);
-    ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
-  } 
-
-  for (int i=0; i<9; i++)
-  {
-    planet[i].render();
-    planet[i].move();
-  }
-  popMatrix();
   
-  
-  
-  if(mouseX >= 125 && mouseX <= 204 && mouseY >= 85 && mouseY <= 165)
-  {
+  //Initial Position of Rings
+    translate(width/2, height/2);  
+
+  //Planets Rotating Around Sun
+    pushMatrix();
+      for (int i = 0 ; i < 9 ; i++) 
+      {
+        noFill();
+        stroke(255, 0, 0); 
+        strokeWeight(1);
+        //Draw Planet
+          ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
+      } 
     
-    m = 80;
-    String merText = "Size = " + planet[0].radius;
-    fill(255, 255, 255);
-    text(merText, 0, 0, 100, 100);  
-  }else
-  {
-    m = 35;
-    
-  }
+      for (int i = 0 ; i < 9 ; i++)
+      {
+        
+        planet[i].render();
+        planet[i].move();
+      }
+    popMatrix();
   
+  
+  
+  
+  //For Mouse Position - Floating Over Planets
+  
+  //Mercury
+    if(mouseX >= 125 && mouseX <= 204 && mouseY >= 85 && mouseY <= 165)
+    {
+      m = 80;
+      String merText = "Size = " + planet[0].radius;
+      fill(255, 255, 255);
+      text(merText, 0, 0, 100, 100);  
+    }
+    else
+    {
+      m = 35;  
+    }
 }
 
 //-----------------------------------------------When clicked--------------------------------//

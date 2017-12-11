@@ -31,7 +31,7 @@ class Planet
   Planet (float radius){
     distFromSun = radius + 60; 
     ang = PI; 
-    speed = (random(.01, .02));
+    speed = (random(0.02, 0.03));
     w = 15; 
     move();
   }
@@ -41,7 +41,8 @@ class Planet
     x = cos(ang) * distFromSun; 
     y = sin(ang) * distFromSun; 
     ang += speed; 
-   }
+
+  }
     
     void render()
     { 
@@ -55,13 +56,13 @@ class Planet
   String toString()
   {
     return planet
-      + ", " + radius
-      + ", " + speed
-      + ", " + distFromSun
-      + ", " + habitable
-      + ", " + fullRot
-      + ", " + temp
-      + ", " + moons
+      + ", RADIUS = " + radius
+      + ", SPEED = " + speed
+      + ", FROM SUN = " + distFromSun
+      + ", LIFE? = " + habitable
+      + ", ROTATION = " + fullRot
+      + ", TEMPERATURE =" + temp
+      + ", MOONS = " + moons
       ;
   }
 }
