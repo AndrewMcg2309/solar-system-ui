@@ -29,7 +29,7 @@ void setup()
   // For Planets - Distance From Sun + Each Other
     for (int i = 0 ; i < 9 ; i++) 
     {
-      float distFromSun = ( i * 20 ) + 60; 
+      float distFromSun = ( i * 23 ) + 40; 
       planet[i] = new Planet (distFromSun);
     }
 

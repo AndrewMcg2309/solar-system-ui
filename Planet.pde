@@ -28,12 +28,16 @@ class Planet
   float x,y,w;
   float ang; 
   int i = (int) random(0,2);
+  float a = random(0, 255);
+  float b = random(0, 255);
+  float c = random(0, 255);
+  
   
   Planet (float radius){
     distFromSun = radius + 60; 
     ang = PI; 
-    speed = (random(0.03, 0.06));
-    w = random(10,20); 
+    speed = (random(0.05, 0.1));
+    w = random(15,25); 
     move();
   }
   
@@ -56,7 +60,7 @@ class Planet
     
     void render()
     { 
-      fill(153, 51, 153);      
+      fill(a, b, c);      
       ellipse(x,y,w,w);
     }
   
