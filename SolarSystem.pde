@@ -1,3 +1,7 @@
+//Saturn and Uranus variables for change in size
+float sat1, sat2, sat3, sat4;
+float ura1;
+
 //Image
 PImage bk;
 
@@ -35,7 +39,14 @@ void setup()
   // Jupiter Saturn Uranus Neptune
     j = 90; sa = 70; u = 45; n = 35; p = 20;
   
+  
+  //Saturn and Uranus rings
+  sat1 = 240; sat2 = 220; sat3 = 200; sat4 = 180;
+  ura1 = 150;
+  
     t = 0;
+    
+    
 }
 
 
@@ -144,10 +155,10 @@ void draw()
         //Saturn Rings
           strokeWeight(1);
           rotateX(HALF_PI-.45);
-          ellipse(0, 0, 240, 240);
-          ellipse(0, 0, 220, 220);
-          ellipse(0, 0, 200, 200);
-          ellipse(0, 0, 180, 180);
+          ellipse(0, 0, sat1, sat1);
+          ellipse(0, 0, sat2, sat2);
+          ellipse(0, 0, sat3, sat3);
+          ellipse(0, 0, sat4, sat4);
         
     popMatrix();
     
@@ -164,7 +175,7 @@ void draw()
         //Uranus Ring
           strokeWeight(1);
           rotateX(HALF_PI+.45);
-          ellipse(0, 0, 150, 150);
+          ellipse(0, 0, ura1, ura1);
         
     popMatrix();
     
@@ -214,8 +225,8 @@ void draw()
       for (int i = 0 ; i < 9 ; i++) 
       {
         noFill();
-        stroke(0, 153, 255); 
-        strokeWeight(2);
+        stroke(0, 153, 255, 90); 
+        strokeWeight(3);
         //Draw Planet
           ellipse(0, 0, (planet[i].distFromSun * 2), (planet[i].distFromSun * 2));
       } 
@@ -327,10 +338,18 @@ void draw()
       textSize(18);
       textAlign(CENTER, TOP);
       text(satText, -350, -400, 700, 100);  
+      sat1 = 280;
+      sat2 = 260;
+      sat3 = 240;
+      sat4 = 220;
     }
     else
     {
       sa = 70;  
+      sat1 = 240;
+      sat2 = 220;
+      sat3 = 200;
+      sat4 = 180;
     }
     
   //Uranus
@@ -342,11 +361,13 @@ void draw()
       stroke(255, 255, 255);
       textSize(18);
       textAlign(CENTER, TOP);
-      text(uraText, -350, -400, 700, 100);   
+      text(uraText, -350, -400, 700, 100); 
+      ura1 = 200;
     }
     else
     {
       u = 45;  
+      ura1 = 150;
     }
     
   //Neptune
