@@ -1,4 +1,4 @@
-# Assignment
+# 1st Year College Assignment
 
 ## Solar System
 * I created a UI of our Solar System.
